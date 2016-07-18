@@ -3,9 +3,9 @@
 angular
   .module('merchantApp')
 
-  //.constant('ENDPOINT', 'http://admin.demo.jinxiu114.com/api')
+  .constant('ENDPOINT', 'http://admin.bdkq.jinxiu114.com/api')
   //.constant('ENDPOINT', 'http://admin.bdkq.jx114.conglinnet.com/api')
-  .constant('ENDPOINT', '/api')
+  //.constant('ENDPOINT', '/api')
   //.constant('ENDPOINT', 'http://admin.bjmz.test.cmamember.com/api')
   .config(['$httpProvider', function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
