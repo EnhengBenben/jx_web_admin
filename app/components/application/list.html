@@ -1,0 +1,41 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>申请列表</h5>
+    <div class="ibox-tools">
+      <div class="btn btn-primary btn-sm" ng-click="vm.applicationExcl()"><i class="fa fa-cloud-download"></i> 导出申请者信息</div>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <form class="form-inline m-b-md" novalidate>
+      <div class="form-group">
+        <label for="year">报到年份</label>
+        <select class="form-control" ng-model="vm.filter.year" id="year" ng-options="y for y in vm.years" style="width: 94px">
+          <option value="">全部年份</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-left: 20px">
+        <label for="courses">进修班</label>
+        <select class="form-control" ng-model="vm.filter.course" id="courses" ng-options="c.id as c.name for c in vm.departments" style="width: 480px">
+          <option value="">全部进修班</option>
+        </select>
+      </div><br/>
+      <div style="margin-top: 10px">
+        <div class="form-group" >
+          <label for="status">审核状态</label>
+          <select class="form-control" ng-model="vm.filter.status" id="status" ng-options="s.name as s.name for s in vm.status">
+            <option value="">全部状态</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-left: 20px">
+          <label for="recommender">推荐人</label>
+          <select class="form-control" ng-model="vm.filter.recommender" id="recommender" ng-options="r.recommend as r.name for r in vm.recommender">
+            <option value="">全部</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <div class="table-responsive">
+      <table id="dt-class" datatable dt-instance="vm.dtInstance" dt-options="vm.dtOptions" dt-columns="vm.dtColumns" class="table table-striped table-bordered table-hover row-border hover"></table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>编辑管理员</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="username">登陆账号</label>
+        <div class="col-md-10">
+          <input type="text" readonly ng-model="vm.admin.username" class="form-control" id="username">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="name">联系人</label>
+        <div class="col-md-10">
+          <input type="text" ng-model="vm.admin.contact" class="form-control" id="name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="mobile">手机号</label>
+        <div class="col-md-10">
+          <input text="number" ng-model="vm.admin.mobile" class="form-control" id="mobile">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="comment">审核科室</label>
+        <div class="col-md-10">
+          <select multiple chosen data-placeholder="请选择科室，可多选" ng-model="vm.admin.department_ids" ng-options="i.id as i.name for i in vm.departments" class="chosen-select form-control">
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="password">密码</label>
+        <div class="col-md-10">
+          <input type="password" ng-model="vm.admin.num" class="form-control" id="password">
+          <p class="help-block">可选，如需更新密码，请在此输入</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="col-md-offset-2 btn btn-primary" type="submit" ladda="vm.saving" ng-click="vm.save()" ng-disabled="vm.admin.$invalid" value="保存修改" />
+        <input class="btn btn-white" type="button" ng-click="vm.cancel()" value="取消" />
+      </div>
+    </form>
+  </div>
+</div>

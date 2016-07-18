@@ -1,0 +1,26 @@
+<div class="form-horizontal" novalidate>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="name">公告标题</label>
+    <div class="col-md-10">
+      <input type="text" required ng-model="vm.notice.name" class="form-control" id="name" placeholder="请输入公告标题">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="introduce">公告内容</label>
+    <div class="col-md-10">
+      <summernote  height="300" lang="zh-CN" ng-model="vm.notice.info"></summernote>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="attachements">附件</label>
+    <div class="col-md-10">
+      <uploader files="vm.notice.attachments"></uploader>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="name">置顶</label>
+    <div class="col-md-10" style="margin-top: 7px">
+      <input type="checkbox" ng-model="vm.notice.top" ng-init="vm.notice.top = false"> <span>置顶后，公告将放在最前面</span>
+    </div>
+  </div>
+</div>

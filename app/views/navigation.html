@@ -1,0 +1,54 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul side-navigation class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <span style="color:white;">
+            进修招生管理系统
+          </span>
+        </div>
+        <div class="logo-element">
+          <i class="fa fa-2x fa-medkit"></i>
+        </div>
+      </li>
+      <li ng-class="{active: $state.includes('admin.courses')}">
+        <a href=""><i class="fa fa-fw fa-graduation-cap"></i> <span class="nav-label">进修班</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level" ng-class="{in: $state.includes('admin.courses')}">
+          <li ui-sref-active="active"><a ui-sref="admin.courses.list({status: 'published'})">进修班列表</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.courses.list({status: 'pending'})">未发布进修班</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.courses.create">添加进修班</a></li>
+        </ul>
+      </li>
+      <li ng-class="{active: $state.includes('admin.application')}">
+        <a href=""><i class="fa fa-fw fa-calendar"></i> <span class="nav-label">申请管理</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level" ng-class="{in: $state.includes('admin.application')}">
+          <li ui-sref-active="active"><a ui-sref="admin.application.list">申请表</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.application.settings.professional.list">申请设置</a></li>
+        </ul>
+      </li>
+      <li ng-class="{active: $state.includes('admin.votes')}">
+        <a href=""><i class="fa fa-fw fa-bullhorn"></i> <span class="nav-label">公告管理</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level" ng-class="{in: $state.includes('admin.notices')}">
+          <li ui-sref-active="active"><a ui-sref="admin.notices.list({status: 'publish'})">公告列表</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.notices.list({status: 'pending'})">未发布公告</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.notices.create">添加公告</a></li>
+        </ul>
+      </li>
+      <li ng-class="{active: $state.includes('admin.members')}">
+        <a href=""><i class="fa fa-fw fa-group"></i> <span class="nav-label">学员</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level" ng-class="{in: $state.includes('admin.members')}">
+          <li ui-sref-active="active"><a ui-sref="admin.members.list">通讯录</a></li>
+        </ul>
+      </li>
+      <li ng-class="{active: $state.includes('admin.settings')}">
+        <a href=""><i class="fa fa-fw fa-gears"></i> <span class="nav-label">系统设置</span><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level" ng-class="{in: $state.includes('admin.settings')}">
+          <li ui-sref-active="active"><a ui-sref="admin.settings.system.information">系统信息</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.settings.department.list">科室部门</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.settings.admins.list">审核管理员</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.settings.account.change_password">修改密码</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

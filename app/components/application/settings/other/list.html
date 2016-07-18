@@ -1,0 +1,44 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="form-horizontal">
+      <form class="form-group">
+        <label class="control-label col-md-2">提供住宿</label>
+        <div class="col-md-10">
+          <select class="chosen-select form-control" ng-model="vm.other.accommodation" ng-options="a.send as a.show for a in vm.accommodation">
+            <option>请选择是否提供住宿</option>
+          </select>
+        </div>
+      </form>
+      <div class="form-group" ng-if="vm.other.accommodation">
+        <div class="col-md-10 col-md-offset-2">
+          <input type="text" class="form-control" placeholder="请输入住宿说明(可选)" ng-model="vm.other.accommodation_introduction"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-md-2 control-label">审核确认</label>
+        <div class="col-md-10">
+          <p style="margin-top: 5px">用户接收到审核通过的通知后,<input type="text" ng-model="vm.other.confirm_time">天内需要确认进修（默认15天）</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-md-2 control-label">报到须知</label>
+        <div class="col-md-10">
+          <uploader files="vm.other.enrollment_intro"></uploader>
+          <p style="margin-top: 7px">请上传进修的报道须知，word或者pdf版本</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-md-2 control-label">公章</label>
+        <div class="col-md-10">
+          <uploader files="vm.other.seal"></uploader>
+          <p style="margin-top: 7px">请提供背景透明的电子公章用于制作电子录取通知书等</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class=" col-md-offset-2" style="padding-left: 16px">
+          <div class="btn btn-primary" ng-click = vm.save()>保存</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

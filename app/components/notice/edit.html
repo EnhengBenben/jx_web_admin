@@ -1,0 +1,17 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>编辑公告</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <notice-editor ng-if="vm.notice" notice="vm.notice"></notice-editor>
+    <div class="form-group">
+      <div class="col-md-offset-2 btn btn-primary" ladda="vm.saving" ng-click="vm.save()">保存修改</div>
+      <div class="btn btn-primary btn-white" ng-click="vm.cancel()">取消</div>
+    </div>
+  </div>
+</div>

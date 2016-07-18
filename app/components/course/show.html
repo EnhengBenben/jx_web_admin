@@ -1,0 +1,55 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>课程详情</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+
+    <div class="ibox-content " style="min-height: 465px">
+      <div style="text-align: center">
+        <h3>{{vm.show.name}}</h3>
+        <p>{{vm.show.published_at}}</p>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+          <div>
+            <h4 style="display: inline-block">申请截止&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.application_deadline}}</p>
+          </div>
+          <div>
+            <h4 style="display: inline-block">发榜日期&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.announcement_date}}</p>
+          </div>
+          <div>
+            <h4 style="display: inline-block">报道日期&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.enrollment_date}}</p>
+          </div>
+          <div>
+            <h4 style="display: inline-block">结业日期&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.graduation_date}}</p>
+          </div>
+          <div>
+            <h4 style="display: inline-block">进修时间&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.period}}</p>
+          </div>
+          <div >
+            <h4 style="display: inline-block">进修费用&nbsp;:&nbsp;</h4>
+            <p style="margin-top: 5px;display: inline-block">{{vm.show.fee}}</p>
+          </div>
+          <div>
+            <h4>详细介绍&nbsp;:</h4>
+          </div>
+          <div>
+            <p style="margin-top: 5px" id="show"></p>
+          </div>
+          <div ng-if="vm.show.attachments.length">
+            <h4>附件:</h4>
+            <div ng-repeat="i in vm.show.attachments">
+              <a href="{{i.url}}">{{i.name}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

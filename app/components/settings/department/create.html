@@ -1,0 +1,21 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>添加科室部门</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="form-horizontal" novalidate>
+      <div class="form-group">
+        <label for="" class="col-md-2 control-label">名称</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" ng-model="vm.edit.name" placeholder="请输入部门名称"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="btn btn-primary col-md-offset-2" ladda="vm.saving" ng-click="vm.save()" style="margin-left: 19%">保存</div>
+      </div>
+    </div>
+  </div>
+</div>

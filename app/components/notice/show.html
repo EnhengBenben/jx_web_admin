@@ -1,0 +1,25 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>公告详情</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h3 class="text-center">{{vm.show.name}}</h3>
+        <p class="text-center">{{vm.show.published_at}}</p>
+        <div id="info">
+        </div>
+        <div ng-if="vm.show.attachments.length">
+          <strong style="font-size: 16px;margin-left: -40px">附件:</strong>
+          <div ng-repeat="i in vm.show.attachments">
+            <a href="{{i.url}}">{{i.name}}</a><br/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

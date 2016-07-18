@@ -1,0 +1,13 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>学员列表</h5>
+    <div class="ibox-tools">
+      <div ng-click="vm.exportMembers()" class="btn btn-sm btn-primary"><i class="fa fa-cloud-download"></i> 导出学员列表</div>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="table-responsive">
+      <table id="dt-courses" datatable dt-instance="vm.dtInstance" dt-options="vm.dtOptions" dt-columns="vm.dtColumns" class="table table-striped table-bordered table-hover row-border hover"></table>
+    </div>
+  </div>
+</div>

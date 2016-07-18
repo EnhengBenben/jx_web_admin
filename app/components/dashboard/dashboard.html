@@ -1,0 +1,68 @@
+<div class="ibox" ng-if="!vm.$localStorage.role">
+  <div class="ibox-content" style="padding-left: 40px;padding-right: 40px">
+    <div class="row">
+      <div ui-sref="admin.courses.list({status:'published'})" class="col-xs-12 col-md-3 dashboard-content-top" style="border-right: 1px solid #FFF;cursor: pointer">
+        <h1 class="h1-font">{{vm.dashboard.courseNum}}</h1>
+        <span class="span-font">进修班</span>
+      </div>
+      <div ui-sref="admin.application.list" class="col-md-6 col-xs-12 dashboard-content-top" style="border-right: 1px solid #FFF;cursor: pointer">
+        <div class="row" style="margin-top: 7px">
+          <div class="col-md-6 " style="border-right: 1px solid #FFF">
+            <h1 class="h1-font" style="margin-top: 4px !important;">{{vm.dashboard.unverifyApplicationCount}}</h1>
+            <span class="span-font">未审核</span>
+          </div>
+          <div class="col-md-6 ">
+            <h1 class="h1-font" style="margin-top: 4px !important;">{{vm.dashboard.applicationCount}}</h1>
+            <span class="span-font">申请总数</span>
+          </div>
+        </div>
+      </div>
+      <div ui-sref="admin.members.list" class="col-xs-12 col-md-3 dashboard-content-top" style="cursor: pointer" >
+        <h1 class="h1-font">{{vm.dashboard.studentNum}}</h1>
+        <span class="span-font">学员</span>
+      </div>
+      </div>
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-12">
+        <h3>申请表</h3>
+        <a ui-sref="admin.application.list" style="display: inline-block;float: right;margin-top: -26px;font-size: 14px;">全部申请表</a>
+        <div class="table-responsive">
+          <table id="dt-table" datatable dt-instance="vm.taInstance" dt-options="vm.taOptions" dt-columns="vm.taColumns" class="table table-striped table-bordered table-hover row-border hover"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ibox" ng-if="vm.$localStorage.role">
+  <div class="ibox-title" style="height: 100%;">
+    <h5>申请列表</h5>
+    <!-- <div class="ibox-tools">
+       <div class="btn btn-primary btn-sm"><i class="fa fa-cloud-download"></i> 导出申请者信息</div>
+     </div>-->
+    <div class="ibox-tools" style="margin-right: 20px">
+      <a ng-click="admin.logout()" class="log-out">
+        <i class="fa fa-sign-out"></i> 退出
+      </a>
+    </div>
+  </div>
+  <div class="ibox-content" style="min-height: 680px">
+    <form class="form-inline m-b-md">
+      <div class="form-group">
+        <label for="year">报到年份</label>
+        <select class="form-control" ng-model="vm.filter.year" id="year" ng-options="y for y in vm.years">
+          <option value="">全部年份</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-left: 20px">
+        <label for="courses">进修班</label>
+        <select class="form-control" ng-model="vm.filter.course" id="courses" ng-options="c.id as c.name for c in vm.courses">
+          <option value="">全部进修班</option>
+        </select>
+      </div>
+    </form>
+    <div class="table-responsive">
+      <table id="dt-class" datatable dt-instance="vm.appInstance" dt-options="vm.appOptions" dt-columns="vm.appColumns" class="table table-striped table-bordered table-hover row-border hover"></table>
+    </div>
+  </div>
+</div>
+

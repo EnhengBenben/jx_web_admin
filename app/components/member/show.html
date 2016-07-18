@@ -1,0 +1,22 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>学员详情</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h3 class="text-center">学员个人信息</h3>
+        <h3 class="">{{vm.members.name}}</h3>
+        <div>
+          <p>手机号：{{vm.members.phone}}</p>
+          <p>单位：{{vm.members.address}}</p>
+          <p>职称：{{vm.members.level}}</p>
+          <p>进修班：{{vm.members.class}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+
+  <!-- Wrapper-->
+  <div id="wrapper" ng-if="!admin.role">
+
+    <!-- Navigation -->
+    <div ng-include="'views/navigation.html'"></div>
+
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="gray-bg">
+
+      <!-- Page wrapper -->
+      <div ng-include="'views/topnavbar.html'"></div>
+
+      <!-- Main view  -->
+      <div style="padding:20px 0 40px 0" ui-view></div>
+
+      <!-- Footer -->
+      <div ng-include="'views/footer.html'"></div>
+
+    </div>
+    <!-- End page wrapper-->
+
+  </div>
+  <!-- End wrapper-->
+  <div ng-if="admin.role" style="background-color: #FFF">
+    <div ui-view="" >
+
+    </div>
+    <!-- Footer -->
+    <div class="footer" style="position: relative;">
+      <div class="pull-right">
+      </div>
+      <div>
+        <p>北京丛林网络技术有限责任公司</p>
+        服务电话：4000687626    服务邮件：service@conglinnet.com
+        <!--<strong>Copyright</strong> 北京丛林网络技术支持 &copy; 2015-->
+      </div>
+    </div>
+    <!--<div ng-include="'views/footer.html'"></div>-->
+  </div>
+
+

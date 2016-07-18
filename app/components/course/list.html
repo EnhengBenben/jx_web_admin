@@ -1,0 +1,28 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5 ng-if="vm.status === 'published'">进修班列表</h5>
+    <h5 ng-if="vm.status === 'pending'">未发布进修班列表</h5>
+    <div class="ibox-tools">
+      <div ui-sref="admin.courses.create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</div>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <div class="form-inline m-b-md">
+      <div class="form-group">
+        <label for="year">报到年份</label>
+        <select class="form-control" ng-model="vm.filter.year" id="year" ng-options="y for y in vm.years">
+          <option value="">全部年份</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-left: 20px">
+        <label for="course">科室</label>
+        <select class="form-control" ng-model="vm.filter.department" id="course" ng-options="d.name as d.name for d in vm.departments">
+          <option value="">全部科室</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table id="dt-courses" datatable dt-instance="vm.dtInstance" dt-options="vm.dtOptions" dt-columns="vm.dtColumns" class="table table-striped table-bordered table-hover row-border hover"></table>
+    </div>
+  </div>
+</div>

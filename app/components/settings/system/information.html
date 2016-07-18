@@ -1,0 +1,38 @@
+<form class="form-horizontal" novalidate>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="information_name">您的名称&nbsp;*</label>
+    <div class="col-md-6">
+      <input type="text" required ng-model="vm.information.name" class="form-control" id="information_name"
+             placeholder="如:北京积水潭医院教育处">
+    </div>
+    <div class="col-md-4" style="position: relative">
+      <div ng-if="vm.information.logo" class="show-image"
+           style="width: 80px;height: 80px;position: absolute;border: 1px solid #A0A000;overflow: hidden">
+        <img ng-src="{{vm.information.logo}}" alt="" style="width: 100%"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="">LOGO</label>
+    <div class="col-md-6">
+      <single-uploader url="vm.information.logo"></single-uploader>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="information_name">申请网址&nbsp;*</label>
+    <div class="col-md-6">
+      <input type="text" required ng-model="vm.information.domain_name" class="form-control" id="url"
+             placeholder="如: 输入jxc后将生成http://jxc.jinxiu.com" readonly>
+      <p style="color: #999;margin-top: 4px">请将此网址发布告知进修申请学员</p>
+    </div>
+    </div>
+  <div class="form-group">
+    <label class="col-md-2 control-label" for="information_introduce">联系方式</label>
+    <div class="col-md-10">
+      <summernote height="300" lang="zh-CN" ng-model="vm.information.con_info"></summernote>
+    </div>
+  </div>
+</form>
+<div class="btn btn-primary" style="margin-left: 175px" ng-click="vm.save()">保存</div>
+

@@ -1,0 +1,15 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>添加公告</h5>
+    <div class="ibox-tools">
+      <a ng-click="vm.cancel()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="ibox-content">
+    <notice-editor notice="vm.notice"></notice-editor>
+    <div>
+      <div class="col-md-offset-2 btn btn-primary" ladda="vm.saving" ng-click="vm.save(false)">仅保存</div>
+      <div class="btn btn-primary" ladda="vm.publishing" ng-click="vm.save(true)">保存并发布</div>
+    </div>
+  </div>
+</div>

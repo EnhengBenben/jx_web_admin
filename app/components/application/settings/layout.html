@@ -1,0 +1,17 @@
+<div class="ibox">
+  <div class="ibox-title">
+    <h5>申请设置</h5>
+  </div>
+  <div class="ibox-content">
+    <uib-tabset>
+      <uib-tab active="false" ui-sref-active="active" ui-sref="admin.application.settings.professional.list" heading=技术职称></uib-tab>
+      <uib-tab ui-sref-active="active" ui-sref="admin.application.settings.education.list" heading=学历></uib-tab>
+      <uib-tab ui-sref-active="active" ui-sref="admin.application.settings.hospital.list" heading=医院级别></uib-tab>
+      <uib-tab ui-sref-active="active" ui-sref="admin.application.settings.duties.list" heading=行政职务></uib-tab>
+      <uib-tab ui-sref-active="active" ui-sref="admin.application.settings.areas.list" heading=地域></uib-tab>
+      <uib-tab ui-sref-active="active" ui-sref="admin.application.settings.other.list" heading=其他设置></uib-tab>
+    </uib-tabset>
+    <div ui-view></div>
+  </div>
+</div>
+
